@@ -39,17 +39,17 @@ export default function Home() {
         </FadeIn>
         <FadeIn delay={0.1}>
           <h1 className="text-6xl sm:text-7xl font-semibold tracking-tight mb-6 text-white leading-tight">
-            Conch
+            Stop giving your agents amnesia.
           </h1>
         </FadeIn>
         <FadeIn delay={0.2}>
-          <p className="text-2xl sm:text-3xl text-gray-400 mb-8 max-w-2xl font-medium leading-snug">
-            Biological memory for AI agents.
+          <p className="text-2xl sm:text-3xl text-gray-400 mb-8 max-w-3xl font-medium leading-snug">
+            Equip your AI with true, biological memory.
           </p>
         </FadeIn>
         <FadeIn delay={0.3}>
           <p className="text-lg text-gray-500 mb-12 max-w-xl">
-            Semantic search + decay. No API keys. Just a SQLite file.
+            Conch is an embedded memory engine that learns, associates, and forgets. No cloud. No API keys. Just a single, highly intelligent SQLite file.
           </p>
         </FadeIn>
 
@@ -85,34 +85,34 @@ export default function Home() {
       {/* The Problem */}
       <section className="max-w-5xl mx-auto px-6 py-20">
         <FadeIn>
-          <h2 className="text-4xl font-semibold mb-8 text-white tracking-tight">The <code className="text-[var(--accent)] bg-[#1a1a1a] px-2 py-1 rounded text-2xl font-mono">memory.md</code> problem</h2>
+          <h2 className="text-4xl font-semibold mb-8 text-white tracking-tight">The <code className="text-[var(--accent)] bg-[#1a1a1a] px-2 py-1 rounded text-2xl font-mono">memory.md</code> hack is dead.</h2>
         </FadeIn>
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-8">
             <FadeIn delay={0.1}>
-              <h3 className="text-xl font-medium text-white mb-2">Context blooming</h3>
-              <p className="text-gray-500 leading-relaxed">Agent prompts get flooded with thousands of lines of irrelevant history. Tokens wasted in every turn.</p>
+              <h3 className="text-xl font-medium text-white mb-2">Context window collapse</h3>
+              <p className="text-gray-500 leading-relaxed">Agent prompts get flooded with thousands of lines of irrelevant history. You&apos;re wasting tokens and obliterating reasoning on useless context.</p>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <h3 className="text-xl font-medium text-white mb-2">Grep isn&apos;t semantic</h3>
-              <p className="text-gray-500 leading-relaxed">Keywords miss meaning. &quot;Where does Jared work?&quot; won&apos;t match &quot;Jared is employed at Microsoft&quot;.</p>
+              <h3 className="text-xl font-medium text-white mb-2">Keyword blindness</h3>
+              <p className="text-gray-500 leading-relaxed">Basic search tools miss intent entirely. Ask &quot;Where does Jared work?&quot; and watch your agent fail to find &quot;Jared is employed at Microsoft&quot;.</p>
             </FadeIn>
           </div>
           <div className="space-y-8">
             <FadeIn delay={0.3}>
-              <h3 className="text-xl font-medium text-white mb-2">Immutable and stale</h3>
-              <p className="text-gray-500 leading-relaxed">A configuration fact from 6 months ago weighs the exact same as a user preference from today.</p>
+              <h3 className="text-xl font-medium text-white mb-2">Information hoarding</h3>
+              <p className="text-gray-500 leading-relaxed">Flat files treat a configuration fact from 6 months ago with the exact same urgency as a critical user preference stated today.</p>
             </FadeIn>
             <FadeIn delay={0.4}>
-              <h3 className="text-xl font-medium text-white mb-2">Duplicated mess</h3>
-              <p className="text-gray-500 leading-relaxed">The same concept stored ten times in slightly different wordings as the file continuously appends.</p>
+              <h3 className="text-xl font-medium text-white mb-2">Hallucination via repetition</h3>
+              <p className="text-gray-500 leading-relaxed">The exact same concept stored ten times in slightly different wordings. Your agent is forced to continually parse a duplicated mess.</p>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      <div className="max-w-5xl mx-auto px-6 py-20">
-        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#333] to-transparent opacity-50"></div>
+      <div className="max-w-5xl mx-auto px-6 py-6">
+        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#222] to-transparent opacity-50"></div>
       </div>
 
       {/* Pillar 1: Biological Decay */}
@@ -124,11 +124,10 @@ export default function Home() {
                 <span className="text-2xl">📉</span>
                 <span className="text-sm tracking-widest uppercase text-[var(--accent)] font-semibold">Decay</span>
               </div>
-              <h2 className="text-4xl font-semibold text-white mb-6 tracking-tight leading-snug">Biological memory pruning.</h2>
+              <h2 className="text-4xl font-semibold text-white mb-6 tracking-tight leading-snug">It learns what matters. And forgets what doesn&apos;t.</h2>
               <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                Memories strengthen with use and fade over time.
-                Facts decay slowly, while episodic events fade faster.
-                Anything below the threshold is pruned forever.
+                Just like a human brain, Conch strengthens memories dynamically as they are used.
+                Irrelevant episodes fade quickly, essential facts endure, and useless noise is garbage-collected forever.
               </p>
             </FadeIn>
           </div>
@@ -158,7 +157,7 @@ export default function Home() {
                   <div className="w-full bg-[#1a1a1a] rounded-full h-1.5 overflow-hidden">
                     <motion.div initial={{ width: 0 }} whileInView={{ width: "31%" }} transition={{ duration: 1, delay: 0.3 }} className="bg-yellow-500 h-full rounded-full"></motion.div>
                   </div>
-                  <p className="text-gray-600 text-xs mt-3">Recalled 40 days ago &mdash; fading</p>
+                  <p className="text-gray-600 text-xs mt-3">Recalled 40 days ago &mdash; fading slowly</p>
                 </div>
               </div>
 
@@ -171,7 +170,7 @@ export default function Home() {
                   <div className="w-full bg-[#1a1a1a] rounded-full h-1.5 overflow-hidden">
                     <motion.div initial={{ width: 0 }} whileInView={{ width: "1%" }} transition={{ duration: 1, delay: 0.4 }} className="bg-red-500 h-full rounded-full"></motion.div>
                   </div>
-                  <p className="text-gray-600 text-xs mt-3">Episode from 90 days ago &mdash; pruned</p>
+                  <p className="text-gray-600 text-xs mt-3">Obsolete episode &mdash; pruned permanently</p>
                 </div>
               </div>
             </FadeIn>
@@ -192,10 +191,10 @@ export default function Home() {
                 <span className="text-2xl">🔍</span>
                 <span className="text-sm tracking-widest uppercase text-[var(--accent)] font-semibold">Semantic</span>
               </div>
-              <h2 className="text-4xl font-semibold text-white mb-6 tracking-tight leading-snug">Hybrid search.</h2>
+              <h2 className="text-4xl font-semibold text-white mb-6 tracking-tight leading-snug">It retrieves meaning. Not just keywords.</h2>
               <p className="text-gray-400 text-lg leading-relaxed">
-                BM25 and vector recall fused via Reciprocal Rank Fusion.
-                Conch finds meaning, not keywords, even when the phrasing is completely different.
+                Powered by a hybrid BM25 and vector recall engine, fused via Reciprocal Rank Fusion.
+                Your agent immediately finds the exact intent behind a query, completely resilient to phrasing differences.
               </p>
             </FadeIn>
           </div>
@@ -205,7 +204,7 @@ export default function Home() {
                 <div className="text-gray-600 mb-2 font-medium"># Stored initially:</div>
                 <div className="mb-8"><span className="text-gray-600">$</span> <span className="text-[var(--accent)]">conch remember</span> <span className="text-emerald-400/80">&quot;Jared&quot;</span> <span className="text-emerald-400/80">&quot;is employed at&quot;</span> <span className="text-emerald-400/80">&quot;Microsoft&quot;</span></div>
                 
-                <div className="text-gray-600 mb-2 font-medium"># Recalled later:</div>
+                <div className="text-gray-600 mb-2 font-medium"># Intuitively recalled:</div>
                 <div className="mb-4"><span className="text-gray-600">$</span> <span className="text-[var(--accent)]">conch recall</span> <span className="text-emerald-400/80">&quot;where does Jared work?&quot;</span></div>
                 
                 <motion.div 
@@ -236,10 +235,9 @@ export default function Home() {
                 <span className="text-2xl">🕸️</span>
                 <span className="text-sm tracking-widest uppercase text-[var(--accent)] font-semibold">Graph</span>
               </div>
-              <h2 className="text-4xl font-semibold text-white mb-6 tracking-tight leading-snug">Spreading activation.</h2>
+              <h2 className="text-4xl font-semibold text-white mb-6 tracking-tight leading-snug">Spreading activation mapping.</h2>
               <p className="text-gray-400 text-lg leading-relaxed">
-                Finding a memory surfaces related ones via shared subjects and objects.
-                A web of associated knowledge, just like your brain.
+                Memories don&apos;t exist in a vacuum. Retrieving one memory naturally surfaces deeply adjacent knowledge through shared subjects and objects. You are building an intelligent graph of associations.
               </p>
             </FadeIn>
           </div>
@@ -281,18 +279,16 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-16">
           <FadeIn>
             <div className="text-3xl mb-6">🚫</div>
-            <h3 className="text-2xl font-semibold text-white mb-4">Zero Infrastructure</h3>
+            <h3 className="text-2xl font-semibold text-white mb-4">Unapologetically Local</h3>
             <p className="text-gray-400 leading-relaxed mb-6">
-              One SQLite file. Local embeddings via FastEmbed.
-              No API keys, no docker containers, and fully offline.
+              Drop the vector DB subscriptions and API keys. Conch runs completely locally against a single SQLite file, leveraging fast local embeddings. Zero lag, zero infrastructure.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
             <div className="text-3xl mb-6">🔌</div>
-            <h3 className="text-2xl font-semibold text-white mb-4">MCP Support</h3>
+            <h3 className="text-2xl font-semibold text-white mb-4">Native MCP Support</h3>
             <p className="text-gray-400 leading-relaxed mb-4">
-              Built-in Model Context Protocol server. Drop the config into any
-              MCP-compatible client (like Claude Desktop) and your LLM gets direct memory access.
+              Instantly plug Conch into Cursor, Claude Desktop, or any Model Context Protocol environment. Your agents get biological memory out of the box with half a dozen lines of JSON.
             </p>
             <div className="code-block !bg-[#0d0d0d] text-xs !border-[#1f1f1f] text-gray-400">
               <pre>{`"mcpServers": {
@@ -306,9 +302,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Final CTA */}
+      <section className="max-w-5xl mx-auto px-6 py-32 text-center">
+        <FadeIn>
+          <h2 className="text-5xl font-semibold text-white mb-8 tracking-tight">Deploy biological memory today.</h2>
+          <div className="relative inline-block w-full max-w-md mb-8 mx-auto">
+            <div className="code-block text-left text-base bg-[#0f0f0f] border-[#1f1f1f]">
+              <CopyButton text="cargo install conch" />
+              <span className="text-gray-500">$</span> <span className="text-[var(--accent)]">cargo install</span> conch
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+
       {/* Footer */}
-      <footer className="max-w-5xl mx-auto px-6 pt-32 pb-12 border-t border-[#1a1a1a]">
-        <FadeIn className="flex flex-col md:flex-row justify-between items-center gap-6">
+      <footer className="max-w-5xl mx-auto px-6 pt-12 pb-12 border-t border-[#1a1a1a] flex flex-col items-center">
+        <FadeIn className="flex flex-col md:flex-row justify-between items-center gap-6 w-full">
           <p className="text-gray-600 text-sm">Built with <span className="text-[var(--accent)] text-lg">🐚</span> by <a href="https://github.com/jlgrimes" className="hover:text-white transition-colors">jlgrimes</a></p>
           <div className="flex gap-6 text-sm text-gray-500 font-medium">
             <a href="https://github.com/jlgrimes/conch" target="_blank" className="hover:text-white transition-colors">GitHub</a>
