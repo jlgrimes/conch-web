@@ -36,8 +36,8 @@ export default function Home() {
 
         <div className="relative inline-block w-full max-w-md mb-8">
           <div className="code-block text-left">
-            <CopyButton text="cargo install conch" />
-            <span className="text-gray-500">$</span> <span className="text-[var(--accent)]">cargo install</span> conch
+            <CopyButton text="cargo install --git https://github.com/jlgrimes/conch conch" />
+            <span className="text-gray-500">$</span> <span className="text-[var(--accent)]">cargo install --git</span> https://github.com/jlgrimes/conch conch
           </div>
         </div>
 
@@ -159,8 +159,8 @@ export default function Home() {
         <SectionTitle>Get Started</SectionTitle>
         <div className="relative inline-block w-full max-w-md mb-6">
           <div className="code-block text-left">
-            <CopyButton text="cargo install conch" />
-            <span className="text-gray-500">$</span> <span className="text-[var(--accent)]">cargo install</span> conch
+            <CopyButton text="cargo install --git https://github.com/jlgrimes/conch conch" />
+            <span className="text-gray-500">$</span> <span className="text-[var(--accent)]">cargo install --git</span> https://github.com/jlgrimes/conch conch
           </div>
         </div>
         <p className="text-gray-500 text-sm mb-6">
