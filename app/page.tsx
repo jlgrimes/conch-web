@@ -87,26 +87,185 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* The Solution */}
-      <Section>
-        <SectionTitle>Why Conch</SectionTitle>
-        <div className="grid sm:grid-cols-2 gap-6">
-          {[
-            ["🔍", "Recall by meaning", "Hybrid BM25 + vector search finds semantically relevant memories, not just keyword matches."],
-            ["📉", "Biological decay", "Old memories fade unless reinforced. Frequently-accessed ones survive longer. Just like real memory."],
-            ["🚫", "Zero infrastructure", "SQLite file + local embeddings via FastEmbed. No API keys, no servers, no config."],
-            ["🔌", "MCP support", "Built-in Model Context Protocol server. Direct LLM tool integration out of the box."],
-            ["🧬", "Deduplication", "Cosine similarity (0.95) detects near-duplicates and reinforces instead of cloning."],
-            ["🕸️", "Graph traversal", "Spreading activation through shared subjects/objects surfaces related memories."],
-          ].map(([emoji, title, desc], i) => (
-            <div key={i} className="bg-[#111] border border-[#1a1a1a] rounded-lg p-5">
-              <div className="text-2xl mb-2">{emoji}</div>
-              <p className="text-white font-medium mb-1">{title}</p>
-              <p className="text-gray-500 text-sm">{desc}</p>
+      {/* Pillar 1: Biological Decay — text left, visual right */}
+      <section className="max-w-5xl mx-auto px-6 py-24">
+        <div className="flex flex-col md:flex-row items-center gap-12">
+          <div className="md:w-1/2">
+            <div className="text-5xl mb-4">📉</div>
+            <h2 className="text-3xl font-bold text-white mb-4">Biological Decay</h2>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              Memories strengthen with use and fade over time — just like biological memory.
+              Facts decay slowly (λ=0.02/day), episodes faster (λ=0.06/day).
+              Anything below 0.01 strength is pruned forever.
+            </p>
+          </div>
+          <div className="md:w-1/2 w-full">
+            <div className="space-y-3">
+              <div className="bg-[#111] border border-[#1a1a1a] rounded-lg p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-white text-sm font-medium">Jared works at Microsoft</span>
+                  <span className="text-xs text-emerald-400 font-mono">strength: 0.94</span>
+                </div>
+                <div className="w-full bg-[#1a1a1a] rounded-full h-2">
+                  <div className="bg-emerald-400 h-2 rounded-full" style={{ width: "94%" }}></div>
+                </div>
+                <p className="text-gray-600 text-xs mt-1">Recalled 3 days ago — reinforced</p>
+              </div>
+              <div className="bg-[#111] border border-[#1a1a1a] rounded-lg p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-gray-400 text-sm font-medium">Prefers dark mode</span>
+                  <span className="text-xs text-yellow-500 font-mono">strength: 0.31</span>
+                </div>
+                <div className="w-full bg-[#1a1a1a] rounded-full h-2">
+                  <div className="bg-yellow-500 h-2 rounded-full" style={{ width: "31%" }}></div>
+                </div>
+                <p className="text-gray-600 text-xs mt-1">Last recalled 40 days ago — fading</p>
+              </div>
+              <div className="bg-[#111] border border-[#1a1a1a] rounded-lg p-4 opacity-50">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-gray-600 text-sm font-medium line-through">Had lunch at Chipotle</span>
+                  <span className="text-xs text-red-400 font-mono">strength: 0.008</span>
+                </div>
+                <div className="w-full bg-[#1a1a1a] rounded-full h-2">
+                  <div className="bg-red-400 h-2 rounded-full" style={{ width: "1%" }}></div>
+                </div>
+                <p className="text-gray-600 text-xs mt-1">Episode from 90 days ago — pruned ☠️</p>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
-      </Section>
+      </section>
+
+      {/* Pillar 2: Semantic Search — visual left, text right */}
+      <section className="max-w-5xl mx-auto px-6 py-24">
+        <div className="flex flex-col md:flex-row-reverse items-center gap-12">
+          <div className="md:w-1/2">
+            <div className="text-5xl mb-4">🔍</div>
+            <h2 className="text-3xl font-bold text-white mb-4">Semantic Search</h2>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              Hybrid BM25 + vector recall fused via Reciprocal Rank Fusion.
+              It finds meaning, not keywords. Ask a question in natural language
+              and get relevant memories — even when the phrasing is completely different.
+            </p>
+          </div>
+          <div className="md:w-1/2 w-full">
+            <div className="code-block text-sm">
+              <div className="text-gray-500 mb-2"># Stored as a fact:</div>
+              <div><span className="text-gray-500">$</span> <span className="text-[var(--accent)]">conch remember</span> <span className="text-emerald-400">&quot;Jared&quot;</span> <span className="text-emerald-400">&quot;is employed at&quot;</span> <span className="text-emerald-400">&quot;Microsoft&quot;</span></div>
+              <div className="mt-4 text-gray-500"># Recalled with different phrasing:</div>
+              <div><span className="text-gray-500">$</span> <span className="text-[var(--accent)]">conch recall</span> <span className="text-emerald-400">&quot;where does Jared work?&quot;</span></div>
+              <div className="mt-2 text-gray-400 italic">→ [fact] Jared is employed at Microsoft</div>
+              <div className="text-gray-500 italic">  score: 0.847 | strength: 0.94</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pillar 3: Graph Traversal — text left, visual right */}
+      <section className="max-w-5xl mx-auto px-6 py-24">
+        <div className="flex flex-col md:flex-row items-center gap-12">
+          <div className="md:w-1/2">
+            <div className="text-5xl mb-4">🕸️</div>
+            <h2 className="text-3xl font-bold text-white mb-4">Graph Traversal</h2>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              Spreading activation through shared subjects and objects.
+              Recalling one memory surfaces related ones — building a web of
+              associated knowledge, just like your brain does.
+            </p>
+          </div>
+          <div className="md:w-1/2 w-full">
+            <div className="bg-[#111] border border-[#1a1a1a] rounded-lg p-6 font-mono text-sm">
+              <div className="flex flex-col items-center gap-2">
+                <div className="flex items-center gap-3 flex-wrap justify-center">
+                  <span className="bg-[var(--accent)] text-white px-3 py-1.5 rounded-lg font-bold">Jared</span>
+                  <span className="text-gray-500">→ works at →</span>
+                  <span className="bg-[#1a1a1a] text-white px-3 py-1.5 rounded-lg border border-[#333]">Microsoft</span>
+                </div>
+                <div className="text-gray-600 text-xs">│</div>
+                <div className="flex items-center gap-3 flex-wrap justify-center">
+                  <span className="bg-[#1a1a1a] text-white px-3 py-1.5 rounded-lg border border-[#333]">Microsoft</span>
+                  <span className="text-gray-500">→ builds →</span>
+                  <span className="bg-[#1a1a1a] text-white px-3 py-1.5 rounded-lg border border-[#333]">M365 Copilot</span>
+                </div>
+                <div className="text-gray-600 text-xs">│</div>
+                <div className="flex items-center gap-3 flex-wrap justify-center">
+                  <span className="bg-[var(--accent)] text-white px-3 py-1.5 rounded-lg font-bold">Jared</span>
+                  <span className="text-gray-500">→ works on →</span>
+                  <span className="bg-[#1a1a1a] text-white px-3 py-1.5 rounded-lg border border-[#333]">M365 Copilot</span>
+                </div>
+              </div>
+              <p className="text-gray-500 text-xs mt-4 text-center">Asking about Jared surfaces Microsoft, which surfaces Copilot</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pillar 4: Zero Infrastructure — visual left, text right */}
+      <section className="max-w-5xl mx-auto px-6 py-24">
+        <div className="flex flex-col md:flex-row-reverse items-center gap-12">
+          <div className="md:w-1/2">
+            <div className="text-5xl mb-4">🚫</div>
+            <h2 className="text-3xl font-bold text-white mb-4">Zero Infrastructure</h2>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              One SQLite file. Local embeddings via FastEmbed — no API key, no internet, no config.
+              Install and go. Your memories stay on your machine.
+            </p>
+          </div>
+          <div className="md:w-1/2 w-full">
+            <div className="grid grid-cols-2 gap-4 text-sm">
+              <div className="bg-[#111] border border-[#1a1a1a] rounded-lg p-4">
+                <p className="text-[var(--accent)] font-bold mb-3">Conch</p>
+                <div className="space-y-1.5 text-gray-400">
+                  <div>✅ SQLite</div>
+                  <div>✅ Local embeddings</div>
+                  <div>✅ No API keys</div>
+                  <div>✅ Works offline</div>
+                  <div>✅ Zero config</div>
+                </div>
+              </div>
+              <div className="bg-[#111] border border-[#1a1a1a] rounded-lg p-4 opacity-60">
+                <p className="text-gray-500 font-bold mb-3">Others</p>
+                <div className="space-y-1.5 text-gray-500">
+                  <div>❌ Redis / Postgres</div>
+                  <div>❌ OpenAI API key</div>
+                  <div>❌ Docker compose</div>
+                  <div>❌ Cloud dependency</div>
+                  <div>❌ YAML config files</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pillar 5: MCP Support — text left, visual right */}
+      <section className="max-w-5xl mx-auto px-6 py-24">
+        <div className="flex flex-col md:flex-row items-center gap-12">
+          <div className="md:w-1/2">
+            <div className="text-5xl mb-4">🔌</div>
+            <h2 className="text-3xl font-bold text-white mb-4">MCP Support</h2>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              Built-in Model Context Protocol server. Drop the config into any
+              MCP-compatible client and your LLM gets direct access to remember
+              and recall — no glue code needed.
+            </p>
+          </div>
+          <div className="md:w-1/2 w-full">
+            <div className="code-block text-sm">
+              <pre className="text-gray-300">{`{
+  "mcpServers": {
+    "conch": {
+      "command": "conch-mcp",
+      "env": {
+        "CONCH_DB": "~/.conch/default.db"
+      }
+    }
+  }
+}`}</pre>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* How it works */}
       <Section>
