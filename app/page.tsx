@@ -32,19 +32,24 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-gray-100 selection:bg-[var(--accent)] selection:text-white flex flex-col items-center">
+      {/* Navigation */}
+      <nav className="w-full max-w-5xl px-6 py-10 flex justify-between items-center">
+        <div className="flex items-center gap-3">
+          <span className="text-2xl">🐚</span>
+          <span className="text-xl font-bold tracking-tight text-white mb-0.5">Conch.</span>
+        </div>
+      </nav>
+
       {/* Hero */}
-      <section className="w-full max-w-5xl px-6 pt-32 md:pt-40 pb-20 md:pb-28">
-        <FadeIn>
-          <div className="text-3xl md:text-4xl mb-4 opacity-80">🐚</div>
-        </FadeIn>
+      <section className="w-full max-w-5xl px-6 pt-16 md:pt-24 pb-20 md:pb-28">
         <FadeIn delay={0.1}>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight mb-4 text-white leading-tight">
-            Persistent context for AI.
+            Biological memory for AI
           </h1>
         </FadeIn>
         <FadeIn delay={0.2}>
           <p className="text-xl md:text-3xl text-gray-400 mb-6 max-w-3xl font-medium leading-snug">
-            Equip your AI with dynamic, biological memory.
+            Give your agents persistent context that naturally learns, associates, and forgets.
           </p>
         </FadeIn>
         <FadeIn delay={0.3}>
@@ -120,10 +125,6 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-start gap-10 md:gap-16">
           <div className="md:w-1/2">
             <FadeIn>
-              <div className="inline-flex items-center gap-2 mb-4">
-                <span className="text-xl md:text-2xl">📉</span>
-                <span className="text-xs md:text-sm tracking-widest uppercase text-[var(--accent)] font-semibold">Decay</span>
-              </div>
               <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4 tracking-tight leading-snug">It learns what matters. And forgets what doesn&apos;t.</h2>
               <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-6">
                 Just like a human brain, Conch strengthens memories dynamically as they are used.
@@ -179,10 +180,6 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-start gap-10 md:gap-16">
           <div className="md:w-1/2">
             <FadeIn>
-              <div className="inline-flex items-center gap-2 mb-4">
-                <span className="text-xl md:text-2xl">🔍</span>
-                <span className="text-xs md:text-sm tracking-widest uppercase text-[var(--accent)] font-semibold">Semantic</span>
-              </div>
               <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4 tracking-tight leading-snug">Retrieve meaning. Not just keywords.</h2>
               <p className="text-gray-400 text-base md:text-lg leading-relaxed">
                 Powered by a hybrid BM25 and vector recall engine, fused via Reciprocal Rank Fusion.
@@ -223,10 +220,6 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-start gap-10 md:gap-16">
           <div className="md:w-1/2">
             <FadeIn>
-              <div className="inline-flex items-center gap-2 mb-4">
-                <span className="text-xl md:text-2xl">🕸️</span>
-                <span className="text-xs md:text-sm tracking-widest uppercase text-[var(--accent)] font-semibold">Graph</span>
-              </div>
               <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4 tracking-tight leading-snug">Spreading activation mapping.</h2>
               <p className="text-gray-400 text-base md:text-lg leading-relaxed">
                 Memories don&apos;t exist in a vacuum. Retrieving one memory naturally surfaces deeply adjacent knowledge through shared subjects and objects. You are building an intelligent graph of associations.
@@ -265,45 +258,46 @@ export default function Home() {
         <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#222] to-transparent opacity-50"></div>
       </div>
 
-      {/* Pillar 4/5: Local & MCP inside stylistic Cards */}
+      {/* Pillar 4: OpenClaw Skill */}
       <section className="w-full max-w-5xl px-6 py-16 md:py-24">
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+        <div className="flex flex-col items-center text-center gap-8">
           <FadeIn>
-            <div className="relative h-full bg-[#0a0a0a] border border-[#1f1f1f] rounded-2xl p-6 md:p-8 flex flex-col">
-              <div className="w-12 h-12 bg-[#141414] border border-[#262626] rounded-xl flex items-center justify-center text-xl mb-6">
-                ⚡️
-              </div>
-              <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 tracking-tight">Unapologetically Local</h3>
-              <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-6 flex-grow">
-                Drop the vector DB subscriptions and API keys. Conch runs completely locally against a single SQLite file, leveraging fast embedding models. Zero lag, zero infrastructure.
-              </p>
-              <div className="font-medium text-[var(--accent)] text-sm inline-flex items-center">
-                Always available offline
-              </div>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6 tracking-tight leading-snug">Just ask OpenClaw to use it. That&apos;s it.</h2>
+            <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-2">
+              Conch operates as a native agent skill. Give OpenClaw the skill URL and define your Mandatory Storage Triggers in <code className="text-gray-300 bg-[#161616] px-1.5 py-0.5 rounded border border-[#2a2a2a]">AGENTS.md</code>, and your agent will deterministically learn your project context.
+            </p>
           </FadeIn>
-
-          <FadeIn delay={0.2}>
-            <div className="relative h-full bg-[#0a0a0a] border border-[#1f1f1f] rounded-2xl p-6 md:p-8 flex flex-col">
-              <div className="w-12 h-12 bg-[#141414] border border-[#262626] rounded-xl flex items-center justify-center text-xl mb-6">
-                🔌
-              </div>
-              <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 tracking-tight">Native MCP</h3>
-              <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-6">
-                Instantly plug Conch into Cursor, Claude Desktop, or any Model Context Protocol environment. Your agents get biological memory out of the box.
-              </p>
-              <div className="code-block !bg-[#111111] text-[10px] md:text-xs !border-[#222] mt-auto">
-                <pre>{`"mcpServers": {
-  "conch": {
-    "command": "conch-mcp",
-    "env": { "CONCH_DB": "~/.conch/default.db" }
-  }
-}`}</pre>
+          <FadeIn delay={0.1} className="w-full max-w-3xl border border-[#1f1f1f] rounded-xl overflow-hidden shadow-2xl">
+            <div className="flex items-center px-4 py-3 bg-[#111111] border-b border-[#1f1f1f] gap-2">
+              <div className="w-3 h-3 rounded-full bg-[#333]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#333]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#333]"></div>
+            </div>
+            <div className="code-block text-left text-xs md:text-sm p-6 bg-[#0a0a0a] border-none rounded-none !font-mono">
+              <div className="text-gray-600 mb-3 font-medium"># 1. Provide the skill instructions:</div>
+              <div className="mb-8"><span className="text-gray-500">User:</span> <span className="text-gray-300">Read https://raw.githubusercontent.com/jlgrimes/conch/master/skill/SKILL.md and install conch.</span></div>
+              
+              <div className="text-gray-600 mb-3 font-medium"># 2. Setup Deterministic Storage (AGENTS.md):</div>
+              <div className="code-block !bg-[#111111] !border-[#222] !p-5 text-[10px] md:text-xs">
+                <span className="text-[var(--accent)]/90 block mb-2 font-semibold tracking-wide">### Mandatory Conch Triggers</span>
+                <span className="text-gray-400 block mb-4">You are a system, not a person. These are IF-THEN rules, not aspirations.</span>
+                <span className="text-white block">| Condition | What to store |</span>
+                <span className="text-gray-600 block">|-----------|--------------|</span>
+                <span className="text-white block">| A project is named | name, concept, stack, repo, location |</span>
+                <span className="text-white block">| A tech decision is made | what was decided and why |</span>
+                <span className="text-white block">| Something is built and pushed | repo URL, local path, status |</span>
+                <span className="text-white block">| A preference is expressed | the preference, verbatim |</span>
               </div>
             </div>
           </FadeIn>
         </div>
       </section>
+
+      <div className="w-full max-w-5xl px-6">
+        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#222] to-transparent opacity-50"></div>
+      </div>
+
+
 
       {/* Final CTA */}
       <section className="w-full max-w-5xl px-6 py-24 md:py-32 text-center">
@@ -311,7 +305,7 @@ export default function Home() {
           <div className="inline-block px-3 py-1 mb-6 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-[var(--accent)] text-xs font-semibold tracking-wide uppercase">
             Open Source & MIT
           </div>
-          <h2 className="text-4xl md:text-5xl font-semibold text-white mb-8 tracking-tight">Deploy biological memory.</h2>
+          <h2 className="text-4xl md:text-5xl font-semibold text-white mb-8 tracking-tight">Evolve your agents.</h2>
           <div className="relative inline-block w-full max-w-md mx-auto">
             <div className="code-block text-left text-sm md:text-base bg-[#0f0f0f] border-[#1f1f1f]">
               <CopyButton text="cargo install conch" />
