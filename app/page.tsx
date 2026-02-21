@@ -8,7 +8,7 @@ function CopyButton({ text }: { text: string }) {
   return (
     <button
       onClick={() => { navigator.clipboard.writeText(text); setCopied(true); setTimeout(() => setCopied(false), 2000); }}
-      className="absolute top-2.5 right-2.5 text-xs text-gray-500 hover:text-[var(--accent)] transition-colors bg-[#0f0f0f] px-2 py-1 rounded"
+      className="absolute top-2.5 right-2.5 text-sm text-gray-500 hover:text-[var(--accent)] transition-colors bg-[#0f0f0f] px-2 py-1 rounded"
     >
       {copied ? "copied!" : "copy"}
     </button>
@@ -36,7 +36,7 @@ export default function Home() {
       <nav className="w-full max-w-5xl px-6 py-10 flex justify-between items-center">
         <div className="flex items-center gap-3">
           <span className="text-2xl">🐚</span>
-          <span className="text-xl font-bold tracking-tight text-white mb-0.5">Conch.</span>
+          <span className="text-xl font-bold tracking-tight text-white mb-0.5">Conch</span>
         </div>
       </nav>
 
@@ -137,34 +137,34 @@ export default function Home() {
               <div className="bg-[#0d0d0d] border border-[#1f1f1f] rounded-xl p-4 md:p-5 shadow-sm">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-white text-sm md:text-base font-medium">Jared works at Microsoft</span>
-                  <span className="text-[10px] md:text-xs text-emerald-400 font-mono">auth: 0.94</span>
+                  <span className="text-sm md:text-base text-emerald-400 font-mono">auth: 0.94</span>
                 </div>
                 <div className="w-full bg-[#1a1a1a] rounded-full h-1 md:h-1.5 overflow-hidden">
                   <motion.div initial={{ width: 0 }} whileInView={{ width: "94%" }} transition={{ duration: 1, delay: 0.2 }} className="bg-emerald-400 h-full rounded-full"></motion.div>
                 </div>
-                <p className="text-gray-600 text-[10px] md:text-xs mt-2.5">Recalled 3 days ago &mdash; reinforced</p>
+                <p className="text-gray-600 text-sm md:text-base mt-2.5">Recalled 3 days ago &mdash; reinforced</p>
               </div>
               
               <div className="bg-[#0d0d0d] border border-[#1f1f1f] rounded-xl p-4 md:p-5 shadow-sm">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-gray-300 text-sm md:text-base font-medium">Prefers dark mode</span>
-                  <span className="text-[10px] md:text-xs text-yellow-500 font-mono">auth: 0.31</span>
+                  <span className="text-sm md:text-base text-yellow-500 font-mono">auth: 0.31</span>
                 </div>
                 <div className="w-full bg-[#1a1a1a] rounded-full h-1 md:h-1.5 overflow-hidden">
                   <motion.div initial={{ width: 0 }} whileInView={{ width: "31%" }} transition={{ duration: 1, delay: 0.3 }} className="bg-yellow-500 h-full rounded-full"></motion.div>
                 </div>
-                <p className="text-gray-600 text-[10px] md:text-xs mt-2.5">Recalled 40 days ago &mdash; fading slowly</p>
+                <p className="text-gray-600 text-sm md:text-base mt-2.5">Recalled 40 days ago &mdash; fading slowly</p>
               </div>
 
               <div className="bg-[#0d0d0d] border border-[#1f1f1f] rounded-xl p-4 md:p-5 opacity-60">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-gray-500 text-sm md:text-base font-medium line-through">Had lunch at Chipotle</span>
-                  <span className="text-[10px] md:text-xs text-red-500 font-mono">auth: 0.01</span>
+                  <span className="text-sm md:text-base text-red-500 font-mono">auth: 0.01</span>
                 </div>
                 <div className="w-full bg-[#1a1a1a] rounded-full h-1 md:h-1.5 overflow-hidden">
                   <motion.div initial={{ width: 0 }} whileInView={{ width: "1%" }} transition={{ duration: 1, delay: 0.4 }} className="bg-red-500 h-full rounded-full"></motion.div>
                 </div>
-                <p className="text-gray-600 text-[10px] md:text-xs mt-2.5">Obsolete episode &mdash; pruned permanently</p>
+                <p className="text-gray-600 text-sm md:text-base mt-2.5">Obsolete episode &mdash; pruned permanently</p>
               </div>
             </FadeIn>
           </div>
@@ -189,7 +189,7 @@ export default function Home() {
           </div>
           <div className="md:w-1/2 w-full pt-2">
             <FadeIn>
-              <div className="code-block text-xs md:text-sm p-5 md:p-6 bg-[#0d0d0d] border-[#1f1f1f]">
+              <div className="code-block text-sm md:text-base p-5 md:p-6 bg-[#0d0d0d] border-[#1f1f1f]">
                 <div className="text-gray-600 mb-1.5 font-medium"># Stored initially:</div>
                 <div className="mb-6"><span className="text-gray-600">$</span> <span className="text-[var(--accent)]">conch remember</span> <span className="text-emerald-400/80">&quot;Jared&quot;</span> <span className="text-emerald-400/80">&quot;is employed at&quot;</span> <span className="text-emerald-400/80">&quot;Microsoft&quot;</span></div>
                 
@@ -203,7 +203,7 @@ export default function Home() {
                   className="text-gray-300 bg-[#161616] p-3 md:p-4 rounded-lg border border-[#2a2a2a]"
                 >
                   <div className="text-white mb-1">→ [fact] Jared is employed at Microsoft</div>
-                  <div className="text-[10px] md:text-xs font-mono text-gray-500">score: 0.847 | strength: 0.94</div>
+                  <div className="text-sm md:text-base font-mono text-gray-500">score: 0.847 | strength: 0.94</div>
                 </motion.div>
               </div>
             </FadeIn>
@@ -228,23 +228,23 @@ export default function Home() {
           </div>
           <div className="md:w-1/2 w-full pt-2">
             <FadeIn>
-              <div className="bg-[#0d0d0d] border border-[#1f1f1f] rounded-xl p-6 md:p-8 font-mono text-[10px] md:text-xs">
+              <div className="bg-[#0d0d0d] border border-[#1f1f1f] rounded-xl p-6 md:p-8 font-mono text-sm md:text-base">
                 <div className="flex flex-col items-start gap-2.5 relative z-10">
                   <div className="flex items-center gap-2 flex-wrap bg-[#141414] px-2.5 py-1.5 border border-[#262626] rounded">
                     <span className="text-white font-medium">Jared</span>
-                    <span className="text-gray-600 text-[9px] md:text-[10px]">→ works at →</span>
+                    <span className="text-gray-600 text-[10px] md:text-sm">→ works at →</span>
                     <span className="text-gray-400">Microsoft</span>
                   </div>
-                  <div className="text-gray-700 text-[10px] ml-5">│</div>
+                  <div className="text-gray-700 text-sm md:text-base ml-5">│</div>
                   <div className="flex items-center gap-2 flex-wrap ml-5 bg-[#141414] px-2.5 py-1.5 border border-[#262626] rounded">
                     <span className="text-gray-400">Microsoft</span>
-                    <span className="text-gray-600 text-[9px] md:text-[10px]">→ builds →</span>
+                    <span className="text-gray-600 text-[10px] md:text-sm">→ builds →</span>
                     <span className="text-gray-300">Copilot</span>
                   </div>
-                  <div className="text-gray-700 text-[10px] ml-5">│</div>
+                  <div className="text-gray-700 text-sm md:text-base ml-5">│</div>
                   <div className="flex items-center gap-2 flex-wrap bg-[#1a1a1a] px-2.5 py-1.5 border border-[#333] rounded">
                     <span className="text-white font-medium">Jared</span>
-                    <span className="text-gray-600 text-[9px] md:text-[10px]">→ works on →</span>
+                    <span className="text-gray-600 text-[10px] md:text-sm">→ works on →</span>
                     <span className="text-white bg-[var(--accent)]/10 px-1.5 py-0.5 rounded text-[var(--accent)]">Copilot</span>
                   </div>
                 </div>
@@ -273,12 +273,12 @@ export default function Home() {
               <div className="w-3 h-3 rounded-full bg-[#333]"></div>
               <div className="w-3 h-3 rounded-full bg-[#333]"></div>
             </div>
-            <div className="code-block text-left text-xs md:text-sm p-6 bg-[#0a0a0a] border-none rounded-none !font-mono">
+            <div className="code-block text-left text-sm md:text-base p-6 bg-[#0a0a0a] border-none rounded-none !font-mono">
               <div className="text-gray-600 mb-3 font-medium"># 1. Provide the skill instructions:</div>
               <div className="mb-8"><span className="text-gray-500">User:</span> <span className="text-gray-300">Read https://raw.githubusercontent.com/jlgrimes/conch/master/skill/SKILL.md and install conch.</span></div>
               
               <div className="text-gray-600 mb-3 font-medium"># 2. Setup Deterministic Storage (AGENTS.md):</div>
-              <div className="code-block !bg-[#111111] !border-[#222] !p-5 text-[10px] md:text-xs">
+              <div className="code-block !bg-[#111111] !border-[#222] !p-5 text-sm md:text-base">
                 <span className="text-[var(--accent)]/90 block mb-2 font-semibold tracking-wide">### Mandatory Conch Triggers</span>
                 <span className="text-gray-400 block mb-4">You are a system, not a person. These are IF-THEN rules, not aspirations.</span>
                 <span className="text-white block">| Condition | What to store |</span>
@@ -302,7 +302,7 @@ export default function Home() {
       {/* Final CTA */}
       <section className="w-full max-w-5xl px-6 py-24 md:py-32 text-center">
         <FadeIn>
-          <div className="inline-block px-3 py-1 mb-6 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-[var(--accent)] text-xs font-semibold tracking-wide uppercase">
+          <div className="inline-block px-3 py-1 mb-6 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-[var(--accent)] text-sm font-semibold tracking-wide uppercase">
             Open Source & MIT
           </div>
           <h2 className="text-4xl md:text-5xl font-semibold text-white mb-8 tracking-tight">Evolve your agents.</h2>
@@ -318,8 +318,8 @@ export default function Home() {
       {/* Footer */}
       <footer className="w-full max-w-5xl px-6 pt-10 pb-10 border-t border-[#1a1a1a] flex flex-col items-center">
         <FadeIn className="flex flex-col sm:flex-row justify-between items-center gap-4 w-full">
-          <p className="text-gray-600 text-xs md:text-sm">Built with <span className="text-[var(--accent)] text-base">🐚</span> by <a href="https://github.com/jlgrimes" className="hover:text-white transition-colors">jlgrimes</a></p>
-          <div className="flex gap-4 md:gap-6 text-xs md:text-sm text-gray-500 font-medium">
+          <p className="text-gray-600 text-sm md:text-base">Built with <span className="text-[var(--accent)] text-lg">🐚</span> by <a href="https://github.com/jlgrimes" className="hover:text-white transition-colors">jlgrimes</a></p>
+          <div className="flex gap-4 md:gap-6 text-sm md:text-base text-gray-500 font-medium">
             <a href="https://github.com/jlgrimes/conch" target="_blank" className="hover:text-white transition-colors">GitHub</a>
             <a href="https://crates.io/crates/conch-core" target="_blank" className="hover:text-white transition-colors">crates.io</a>
             <a href="https://docs.rs/conch-core" target="_blank" className="hover:text-white transition-colors">Docs</a>
