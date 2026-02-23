@@ -19,12 +19,12 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 const tiers = [
   {
     name: "Starter",
-    price: "$1.5k",
+    price: "Contact",
     detail: "Fast reliability audit + prioritized fix plan for early teams.",
   },
   {
     name: "Growth",
-    price: "$4k",
+    price: "Contact",
     detail: "Hands-on reliability implementation + telemetry hardening.",
   },
   {

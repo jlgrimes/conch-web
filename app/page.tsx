@@ -38,6 +38,10 @@ export default function Home() {
           <span className="text-2xl">🐚</span>
           <span className="text-xl font-bold tracking-tight text-white mb-0.5">Conch</span>
         </div>
+        <div className="flex items-center gap-5 text-sm">
+          <a href="/reliability" className="text-gray-400 hover:text-white transition-colors">Reliability</a>
+          <a href="https://app.conch.lol" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors">Portal</a>
+        </div>
       </nav>
 
       {/* Hero */}
