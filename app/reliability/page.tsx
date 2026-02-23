@@ -1,97 +1,119 @@
-const pricingTiers = [
+"use client";
+
+import { motion } from "framer-motion";
+
+function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, filter: "blur(8px)", y: 10 }}
+      whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+      viewport={{ once: true, margin: "-5%" }}
+      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+const tiers = [
   {
     name: "Starter",
-    placeholder: "For solo builders and prototypes.",
+    price: "$1.5k",
+    detail: "Fast reliability audit + prioritized fix plan for early teams.",
   },
   {
     name: "Growth",
-    placeholder: "For product teams shipping production agents.",
+    price: "$4k",
+    detail: "Hands-on reliability implementation + telemetry hardening.",
   },
   {
     name: "Enterprise",
-    placeholder: "For high-scale memory governance and support.",
+    price: "Custom",
+    detail: "Custom rollout with compliance, reliability SLOs, and enablement.",
   },
-];
-
-const proofItems = [
-  "Proof placeholder: benchmark snapshots and latency stats",
-  "Proof placeholder: customer logos and technical case studies",
-  "Proof placeholder: trust artifacts (security and reliability docs)",
 ];
 
 export default function ReliabilityPage() {
   return (
-    <main className="page-shell">
-      <header className="hero card">
-        <p className="eyebrow">Conch Reliability</p>
-        <h1>Memory that helps agents learn, not just remember.</h1>
-        <p className="lead">
-          Conch gives AI workflows semantic recall with biologically inspired decay and reinforcement, so memory stays relevant as your
-          product scales.
-        </p>
-        <div className="cta-row">
-          <button type="button" className="primary-btn">
-            Get Started
-          </button>
-          <span className="cta-note">CTA placeholder: wire to signup or waitlist when onboarding flow is ready.</span>
+    <main className="min-h-screen bg-[#0a0a0a] text-gray-100 selection:bg-[var(--accent)] selection:text-white flex flex-col items-center">
+      <nav className="w-full max-w-5xl px-6 py-10 flex justify-between items-center">
+        <div className="flex items-center gap-3">
+          <span className="text-2xl">🐚</span>
+          <span className="text-xl font-bold tracking-tight text-white mb-0.5">Conch</span>
         </div>
-      </header>
+        <a href="/" className="text-sm text-gray-400 hover:text-white transition-colors">
+          ← Back to home
+        </a>
+      </nav>
 
-      <section className="card" aria-labelledby="pricing-title">
-        <h2 id="pricing-title">Pricing and Offer</h2>
-        <p className="section-note">Placeholder section for packaging, feature gates, and contract terms.</p>
-        <div className="tier-grid">
-          {pricingTiers.map((tier) => (
-            <article className="tier" key={tier.name}>
-              <h3>{tier.name}</h3>
-              <p>{tier.placeholder}</p>
-            </article>
+      <section className="w-full max-w-5xl px-6 pt-10 md:pt-16 pb-14 md:pb-20">
+        <FadeIn delay={0.1}>
+          <p className="text-sm uppercase tracking-[0.18em] text-[var(--accent)] mb-3">Reliability</p>
+          <h1 className="text-5xl md:text-6xl font-semibold tracking-tight text-white leading-tight max-w-4xl">
+            Production reliability for memory-powered AI systems.
+          </h1>
+        </FadeIn>
+        <FadeIn delay={0.2}>
+          <p className="text-lg md:text-2xl text-gray-400 mt-5 max-w-3xl leading-snug">
+            We harden retrieval quality, write reliability, explainability, and ops telemetry so your memory stack survives real traffic.
+          </p>
+        </FadeIn>
+        <FadeIn delay={0.3}>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="https://app.conch.lol"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-white text-black rounded-lg hover:bg-gray-200 transition-colors"
+            >
+              Open portal
+            </a>
+            <a
+              href="mailto:founders@conch.lol?subject=Conch%20Reliability"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 border border-[#333] text-gray-300 rounded-lg hover:border-gray-500 transition-colors"
+            >
+              Contact team
+            </a>
+          </div>
+        </FadeIn>
+      </section>
+
+      <div className="w-full max-w-5xl px-6">
+        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#222] to-transparent opacity-50"></div>
+      </div>
+
+      <section className="w-full max-w-5xl px-6 py-14 md:py-20">
+        <FadeIn>
+          <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-8">Offer</h2>
+        </FadeIn>
+        <div className="grid md:grid-cols-3 gap-4">
+          {tiers.map((tier, i) => (
+            <FadeIn delay={0.1 + i * 0.07} key={tier.name}>
+              <article className="bg-[#0f0f0f] border border-[#202020] rounded-2xl p-5 h-full">
+                <h3 className="text-white text-xl font-medium">{tier.name}</h3>
+                <p className="text-[var(--accent)] font-semibold mt-1">{tier.price}</p>
+                <p className="text-gray-400 mt-3 leading-relaxed">{tier.detail}</p>
+              </article>
+            </FadeIn>
           ))}
         </div>
       </section>
 
-      <section className="card" aria-labelledby="trust-title">
-        <h2 id="trust-title">Trust and Proof</h2>
-        <p className="section-note">Placeholder section for product credibility signals.</p>
-        <ul className="proof-list">
-          {proofItems.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="card" aria-labelledby="contact-title">
-        <h2 id="contact-title">Contact and Onboarding Request</h2>
-        <p className="section-note">Form placeholder only. Submission handling can be wired once backend endpoints are chosen.</p>
-        <form className="contact-form">
-          <label>
-            Name
-            <input type="text" name="name" placeholder="Jane Doe" />
-          </label>
-          <label>
-            Work Email
-            <input type="email" name="email" placeholder="jane@company.com" />
-          </label>
-          <label>
-            Team Size
-            <select name="teamSize" defaultValue="">
-              <option value="" disabled>
-                Select team size
-              </option>
-              <option value="1-5">1-5</option>
-              <option value="6-20">6-20</option>
-              <option value="21-100">21-100</option>
-              <option value="101+">101+</option>
-            </select>
-          </label>
-          <label>
-            Use Case
-            <textarea name="useCase" rows={4} placeholder="Describe what your agents need to remember." />
-          </label>
-          <button type="submit" className="secondary-btn">
-            Request Onboarding
-          </button>
-        </form>
+      <section className="w-full max-w-5xl px-6 pb-16 md:pb-24">
+        <FadeIn>
+          <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-6">Proof we focus on</h2>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <div className="bg-[#0f0f0f] border border-[#202020] rounded-2xl p-6">
+            <ul className="space-y-3 text-gray-300 leading-relaxed">
+              <li>• Retrieval drift checks and ranking explainability artifacts</li>
+              <li>• Write-retry telemetry + failure-mode hardening</li>
+              <li>• Snapshot comparison tooling for regression triage</li>
+              <li>• Documented rollout checklist for production readiness</li>
+            </ul>
+          </div>
+        </FadeIn>
       </section>
     </main>
   );
