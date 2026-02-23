@@ -38,23 +38,29 @@ export default function Home() {
           <span className="text-2xl">🐚</span>
           <span className="text-xl font-bold tracking-tight text-white mb-0.5">Conch</span>
         </div>
+        <a
+          href="#pricing"
+          className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)] transition-colors text-sm font-medium"
+        >
+          See Reliability Pack
+        </a>
       </nav>
 
       {/* Hero */}
       <section className="w-full max-w-5xl px-6 pt-16 md:pt-24 pb-20 md:pb-28">
         <FadeIn delay={0.1}>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight mb-4 text-white leading-tight">
-            Biological memory for AI
+            Reliable production memory for AI agents.
           </h1>
         </FadeIn>
         <FadeIn delay={0.2}>
           <p className="text-xl md:text-3xl text-gray-400 mb-6 max-w-3xl font-medium leading-snug">
-            Give your agents persistent context that naturally learns, associates, and forgets.
+            Stop fragile prompt hacks and recoverable context bugs. Ship memory that survives real production traffic.
           </p>
         </FadeIn>
         <FadeIn delay={0.3}>
           <p className="text-base md:text-lg text-gray-500 mb-10 max-w-xl">
-            Conch is an embedded memory engine that learns, associates, and forgets over time. No cloud. No API keys. Just a single, highly intelligent SQLite file.
+            Conch is an embedded memory engine with deterministic storage and high-signal retrieval. No cloud dependency. No API keys. One SQLite file your team can test, ship, and trust.
           </p>
         </FadeIn>
 
@@ -70,18 +76,23 @@ export default function Home() {
         <FadeIn delay={0.5}>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 font-medium">
             <a
-              href="https://github.com/jlgrimes/conch"
-              target="_blank"
+              href="#pricing"
               className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-white text-black rounded-lg hover:bg-gray-200 transition-colors w-full sm:w-auto"
             >
-              GitHub
+              Start Reliability Pack
             </a>
             <a
-              href="https://docs.rs/conch-core"
+              href="#proof"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 border border-[#333] text-gray-300 rounded-lg hover:border-gray-500 transition-colors w-full sm:w-auto"
+            >
+              Review reliability proof
+            </a>
+            <a
+              href="https://github.com/jlgrimes/conch"
               target="_blank"
               className="inline-flex items-center justify-center gap-2 px-6 py-2.5 border border-[#333] text-gray-300 rounded-lg hover:border-gray-500 transition-colors w-full sm:w-auto"
             >
-              Documentation
+              View GitHub
             </a>
           </div>
         </FadeIn>
@@ -113,6 +124,180 @@ export default function Home() {
               <p className="text-gray-500 text-sm md:text-base leading-relaxed">Stop generating duplicated messes. Conch automatically reinforces frequently accessed memories while avoiding endless duplication.</p>
             </FadeIn>
           </div>
+        </div>
+      </section>
+
+      <div className="w-full max-w-5xl px-6">
+        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#222] to-transparent opacity-50"></div>
+      </div>
+
+      {/* Pain / Solution Narrative */}
+      <section className="w-full max-w-5xl px-6 py-16 md:py-24">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+          <FadeIn>
+            <div className="rounded-2xl border border-[#2a1616] bg-[#120d0d] p-6 md:p-8 h-full">
+              <h2 className="text-2xl md:text-3xl font-semibold text-white tracking-tight mb-4">Most agent failures are memory failures.</h2>
+              <p className="text-gray-400 leading-relaxed text-sm md:text-base mb-5">
+                Teams lose reliability when memory is bolted on: noisy recall, duplicated facts, stale context, and no confidence in what the agent will retrieve next.
+              </p>
+              <ul className="space-y-3 text-sm md:text-base text-gray-500">
+                <li>Prompt state resets between sessions</li>
+                <li>Hard to prove what memory was stored or recalled</li>
+                <li>Expensive context windows hide root-cause defects</li>
+              </ul>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="rounded-2xl border border-[#1f1f1f] bg-[#101010] p-6 md:p-8 h-full">
+              <h2 className="text-2xl md:text-3xl font-semibold text-white tracking-tight mb-4">Conch makes memory production-grade.</h2>
+              <p className="text-gray-400 leading-relaxed text-sm md:text-base mb-5">
+                Conch gives your team an embedded memory layer with deterministic behavior, testability, and retrieval quality designed for real operational load.
+              </p>
+              <ul className="space-y-3 text-sm md:text-base text-gray-300">
+                <li>Deterministic write paths with explicit storage triggers</li>
+                <li>Hybrid semantic retrieval tuned for precision under drift</li>
+                <li>Decay + reinforcement mechanics that reduce memory bloat</li>
+              </ul>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      <div className="w-full max-w-5xl px-6">
+        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#222] to-transparent opacity-50"></div>
+      </div>
+
+      {/* Why Teams Buy */}
+      <section id="why-buy" className="w-full max-w-5xl px-6 py-16 md:py-24">
+        <FadeIn>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-3 text-white tracking-tight">Why teams buy Conch</h2>
+          <p className="text-gray-500 text-base md:text-lg max-w-3xl mb-10">
+            Conch is purchased to reduce reliability incidents and shorten the path from prototype to production memory.
+          </p>
+        </FadeIn>
+        <div className="grid md:grid-cols-3 gap-5 md:gap-6">
+          <FadeIn delay={0.1}>
+            <div className="rounded-xl border border-[#1f1f1f] bg-[#0f0f0f] p-5 md:p-6 h-full">
+              <p className="text-[var(--accent)] text-sm font-semibold mb-2">Outcome 01</p>
+              <h3 className="text-white text-lg font-medium mb-2">Fewer memory regressions</h3>
+              <p className="text-gray-400 text-sm md:text-base mb-4">Deterministic persistence and explicit recall behavior reduce surprise failures after deploys.</p>
+              <p className="text-gray-500 text-sm">Teams use Conch to enforce stable memory behavior across agent versions.</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div className="rounded-xl border border-[#1f1f1f] bg-[#0f0f0f] p-5 md:p-6 h-full">
+              <p className="text-[var(--accent)] text-sm font-semibold mb-2">Outcome 02</p>
+              <h3 className="text-white text-lg font-medium mb-2">Faster production launch</h3>
+              <p className="text-gray-400 text-sm md:text-base mb-4">Embedded SQLite deployment removes remote memory service dependencies and infra drag.</p>
+              <p className="text-gray-500 text-sm">Engineering teams can move from demo to production in days, not quarters.</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <div className="rounded-xl border border-[#1f1f1f] bg-[#0f0f0f] p-5 md:p-6 h-full">
+              <p className="text-[var(--accent)] text-sm font-semibold mb-2">Outcome 03</p>
+              <h3 className="text-white text-lg font-medium mb-2">Lower token spend for context</h3>
+              <p className="text-gray-400 text-sm md:text-base mb-4">Recall exactly what matters without overstuffing prompts with full chat history.</p>
+              <p className="text-gray-500 text-sm">Budgets stay predictable as usage scales and context depth grows.</p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      <div className="w-full max-w-5xl px-6">
+        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#222] to-transparent opacity-50"></div>
+      </div>
+
+      {/* Pricing / Offer */}
+      <section id="pricing" className="w-full max-w-5xl px-6 py-16 md:py-24">
+        <FadeIn>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-3 text-white tracking-tight">Reliability Pack experiment</h2>
+          <p className="text-gray-500 text-base md:text-lg max-w-3xl mb-10">
+            Three ways to adopt Conch, from solo validation to full reliability hardening with hands-on implementation support.
+          </p>
+        </FadeIn>
+        <div className="grid md:grid-cols-3 gap-5 md:gap-6">
+          <FadeIn delay={0.1}>
+            <div className="rounded-2xl border border-[#1f1f1f] bg-[#0e0e0e] p-6 h-full flex flex-col">
+              <p className="text-gray-400 text-sm mb-2">Starter</p>
+              <h3 className="text-white text-2xl font-semibold mb-4">OSS only</h3>
+              <p className="text-gray-500 text-sm md:text-base mb-5">For individual builders validating memory quality in a single agent workflow.</p>
+              <ul className="space-y-2 text-sm text-gray-300 mb-7">
+                <li>MIT open-source Conch core</li>
+                <li>Community docs + examples</li>
+                <li>Self-serve setup</li>
+              </ul>
+              <a href="https://github.com/jlgrimes/conch" target="_blank" className="mt-auto inline-flex justify-center px-4 py-2.5 rounded-lg border border-[#333] text-gray-300 hover:border-gray-500 transition-colors">
+                Use Starter
+              </a>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div className="rounded-2xl border border-[#2a2a2a] bg-[#111111] p-6 h-full flex flex-col">
+              <p className="text-gray-300 text-sm mb-2">Team</p>
+              <h3 className="text-white text-2xl font-semibold mb-4">Shared rollout</h3>
+              <p className="text-gray-400 text-sm md:text-base mb-5">For teams shipping multi-agent workflows and needing integration guidance.</p>
+              <ul className="space-y-2 text-sm text-gray-200 mb-7">
+                <li>Architecture review + implementation checklist</li>
+                <li>Storage trigger design for AGENTS.md</li>
+                <li>Rollout playbook with reliability guardrails</li>
+              </ul>
+              <a href="https://github.com/jlgrimes/conch/discussions" target="_blank" className="mt-auto inline-flex justify-center px-4 py-2.5 rounded-lg border border-[#444] text-white hover:border-gray-300 transition-colors">
+                Talk Team Plan
+              </a>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <div className="rounded-2xl border border-[var(--accent)]/40 bg-[linear-gradient(180deg,rgba(255,107,107,0.08),rgba(10,10,10,1))] p-6 h-full flex flex-col shadow-[0_0_0_1px_rgba(255,107,107,0.1)]">
+              <p className="text-[var(--accent)] text-sm mb-2 font-semibold">Reliability Pack</p>
+              <h3 className="text-white text-2xl font-semibold mb-4">Production hardening</h3>
+              <p className="text-gray-200 text-sm md:text-base mb-5">For high-stakes workflows where reliability incidents are costly and unacceptable.</p>
+              <ul className="space-y-2 text-sm text-gray-100 mb-7">
+                <li>Memory reliability audit + threat model</li>
+                <li>Load, drift, and regression test harness setup</li>
+                <li>Runbook + incident response patterns for memory failures</li>
+              </ul>
+              <a href="mailto:hello@conch-memory.dev?subject=Reliability%20Pack%20Inquiry" className="mt-auto inline-flex justify-center px-4 py-2.5 rounded-lg bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)] transition-colors">
+                Apply for Reliability Pack
+              </a>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      <div className="w-full max-w-5xl px-6">
+        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#222] to-transparent opacity-50"></div>
+      </div>
+
+      {/* Trust / Proof */}
+      <section id="proof" className="w-full max-w-5xl px-6 py-16 md:py-24">
+        <FadeIn>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-3 text-white tracking-tight">Trust, built on shipped reliability work</h2>
+          <p className="text-gray-500 text-base md:text-lg max-w-3xl mb-10">
+            Reliability is a product claim only when backed by shipped controls and repeatable test evidence.
+          </p>
+        </FadeIn>
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          <FadeIn delay={0.1}>
+            <div className="rounded-xl border border-[#1f1f1f] bg-[#0f0f0f] p-6">
+              <h3 className="text-white text-xl font-medium mb-4">Shipped reliability items</h3>
+              <ul className="space-y-3 text-sm md:text-base text-gray-300">
+                <li>Hybrid BM25 + vector retrieval with rank fusion for stable query performance</li>
+                <li>Biological decay and reinforcement to control stale memory accumulation</li>
+                <li>Embedded SQLite deployment to remove external memory service failure modes</li>
+                <li>Agent-skill integration path for deterministic memory writes via rule triggers</li>
+              </ul>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div className="rounded-xl border border-[#1f1f1f] bg-[#0f0f0f] p-6">
+              <h3 className="text-white text-xl font-medium mb-4">Evidence-oriented testing language</h3>
+              <div className="space-y-4 text-sm md:text-base">
+                <p className="text-gray-300"><span className="text-white font-medium">Regression suites:</span> verify recall behavior for canonical user facts and edge phrasing drift.</p>
+                <p className="text-gray-300"><span className="text-white font-medium">Load checks:</span> validate retrieval quality under sustained write/read throughput before rollout.</p>
+                <p className="text-gray-300"><span className="text-white font-medium">Failure drills:</span> rehearse corruption, stale-memory, and conflict scenarios with clear runbooks.</p>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -305,12 +490,21 @@ export default function Home() {
           <div className="inline-block px-3 py-1 mb-6 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-[var(--accent)] text-sm font-semibold tracking-wide uppercase">
             Open Source & MIT
           </div>
-          <h2 className="text-4xl md:text-5xl font-semibold text-white mb-8 tracking-tight">Evolve your agents.</h2>
-          <div className="relative inline-block w-full max-w-md mx-auto">
+          <h2 className="text-4xl md:text-5xl font-semibold text-white mb-5 tracking-tight">Ship memory your team can trust in production.</h2>
+          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-8">Start with OSS today, then upgrade to the Reliability Pack when memory incidents become business-critical.</p>
+          <div className="relative inline-block w-full max-w-md mx-auto mb-7">
             <div className="code-block text-left text-sm md:text-base bg-[#0f0f0f] border-[#1f1f1f]">
               <CopyButton text="cargo install conch" />
               <span className="text-gray-500">$</span> <span className="text-[var(--accent)]">cargo install</span> conch
             </div>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center font-medium">
+            <a href="#pricing" className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-white text-black rounded-lg hover:bg-gray-200 transition-colors w-full sm:w-auto">
+              Choose your plan
+            </a>
+            <a href="#proof" className="inline-flex items-center justify-center gap-2 px-6 py-2.5 border border-[#333] text-gray-300 rounded-lg hover:border-gray-500 transition-colors w-full sm:w-auto">
+              See proof points
+            </a>
           </div>
         </FadeIn>
       </section>
