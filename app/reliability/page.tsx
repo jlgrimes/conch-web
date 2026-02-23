@@ -100,7 +100,7 @@ export default function ReliabilityPage() {
         </div>
       </section>
 
-      <section className="w-full max-w-5xl px-6 pb-16 md:pb-24">
+      <section className="w-full max-w-5xl px-6 pb-10 md:pb-14">
         <FadeIn>
           <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-6">Proof we focus on</h2>
         </FadeIn>
@@ -112,6 +112,26 @@ export default function ReliabilityPage() {
               <li>• Added time-window recall filtering for today/yesterday/last 24h</li>
               <li>• Added explainability exports and trace labels for auditability</li>
             </ul>
+          </div>
+        </FadeIn>
+      </section>
+
+      <section className="w-full max-w-5xl px-6 pb-16 md:pb-24">
+        <FadeIn>
+          <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-6">Exact deliverables</h2>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <div className="bg-[#0f0f0f] border border-[#202020] rounded-2xl p-6">
+            <ol className="space-y-2 text-gray-300 leading-relaxed list-decimal list-inside">
+              <li>Memory reliability audit + risk register</li>
+              <li>Recall validation suite + before/after scoring</li>
+              <li>Drift detection guardrails + release checklist</li>
+              <li>Explainability export + traceability pack</li>
+              <li>Write reliability hardening + retry policy</li>
+              <li>Observability baseline + alert thresholds</li>
+              <li>Production go/no-go readiness checklist</li>
+              <li>Executive summary + 14-day action plan</li>
+            </ol>
           </div>
         </FadeIn>
       </section>
