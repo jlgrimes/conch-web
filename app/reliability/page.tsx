@@ -116,6 +116,28 @@ export default function ReliabilityPage() {
         </FadeIn>
       </section>
 
+      <section className="w-full max-w-5xl px-6 pb-16 md:pb-24">
+        <FadeIn>
+          <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-6">Current metrics</h2>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <div className="grid md:grid-cols-3 gap-4">
+            <article className="bg-[#0f0f0f] border border-[#202020] rounded-2xl p-5">
+              <p className="text-gray-400 text-sm">Intake pipeline tests</p>
+              <p className="text-white text-2xl font-semibold mt-2">3/3 successful</p>
+            </article>
+            <article className="bg-[#0f0f0f] border border-[#202020] rounded-2xl p-5">
+              <p className="text-gray-400 text-sm">Lead alert delivery</p>
+              <p className="text-white text-2xl font-semibold mt-2">Real-time (Discord)</p>
+            </article>
+            <article className="bg-[#0f0f0f] border border-[#202020] rounded-2xl p-5">
+              <p className="text-gray-400 text-sm">Ops reliability snapshot</p>
+              <p className="text-white text-2xl font-semibold mt-2">Retry severity: healthy</p>
+            </article>
+          </div>
+        </FadeIn>
+      </section>
+
     </main>
   );
 }
