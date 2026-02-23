@@ -20,17 +20,17 @@ const tiers = [
   {
     name: "Starter",
     price: "Contact",
-    detail: "Fast reliability audit + prioritized fix plan for early teams.",
+    detail: "Reliability audit + prioritized remediation plan.",
   },
   {
     name: "Growth",
     price: "Contact",
-    detail: "Hands-on reliability implementation + telemetry hardening.",
+    detail: "Implementation sprint for recall quality + observability hardening.",
   },
   {
     name: "Enterprise",
     price: "Custom",
-    detail: "Custom rollout with compliance, reliability SLOs, and enablement.",
+    detail: "Custom rollout with governance, SLO targets, and team enablement.",
   },
 ];
 
@@ -107,10 +107,10 @@ export default function ReliabilityPage() {
         <FadeIn delay={0.1}>
           <div className="bg-[#0f0f0f] border border-[#202020] rounded-2xl p-6">
             <ul className="space-y-3 text-gray-300 leading-relaxed">
-              <li>• Retrieval drift checks and ranking explainability artifacts</li>
-              <li>• Write-retry telemetry + failure-mode hardening</li>
-              <li>• Snapshot comparison tooling for regression triage</li>
-              <li>• Documented rollout checklist for production readiness</li>
+              <li>• Built drift compare pagination + cache metadata for faster triage</li>
+              <li>• Added action-event and daily rollup memory ingestion pipeline</li>
+              <li>• Added time-window recall filtering for today/yesterday/last 24h</li>
+              <li>• Added explainability exports and trace labels for auditability</li>
             </ul>
           </div>
         </FadeIn>
