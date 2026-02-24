@@ -70,7 +70,7 @@ export default function ReliabilityPage() {
               Open portal
             </a>
             <a
-              href="mailto:founders@conch.lol?subject=Conch%20Reliability"
+              href="mailto:founders@conch.so?subject=Conch%20Reliability"
               className="inline-flex items-center justify-center gap-2 px-6 py-2.5 border border-[#333] text-gray-300 rounded-lg hover:border-gray-500 transition-colors"
             >
               Contact team
