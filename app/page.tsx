@@ -91,32 +91,41 @@ export default function Home() {
         </FadeIn>
       </section>
 
-      {/* The Capability Grid */}
+      {/* Four Primitives */}
       <section className="w-full max-w-5xl px-6 py-16 md:py-24">
         <FadeIn>
-          <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-white tracking-tight">Scale intelligence infinitely.</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-3 text-white tracking-tight">One memory engine. Four primitives.</h2>
+          <p className="text-gray-500 mb-10 max-w-3xl text-sm md:text-base">Conch now separates memory by purpose, so your agent can reason clearly instead of mixing everything into one noisy bucket.</p>
         </FadeIn>
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-          <div className="space-y-6 md:space-y-8">
-            <FadeIn delay={0.1}>
-              <h3 className="text-lg md:text-xl font-medium text-white mb-2">Context scalability</h3>
-              <p className="text-gray-500 text-sm md:text-base leading-relaxed">Provide your agents with years of history without polluting the prompt. Token utilization stays perfectly efficient, no matter how much your agent learns.</p>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <h3 className="text-lg md:text-xl font-medium text-white mb-2">Semantic precision</h3>
-              <p className="text-gray-500 text-sm md:text-base leading-relaxed">Locate exact meaning across all stored memories instantly. Completely resilient to variations in human phrasing or formatting.</p>
-            </FadeIn>
-          </div>
-          <div className="space-y-6 md:space-y-8">
-            <FadeIn delay={0.3}>
-              <h3 className="text-lg md:text-xl font-medium text-white mb-2">Dynamic relevance tracking</h3>
-              <p className="text-gray-500 text-sm md:text-base leading-relaxed">Give your memory a sense of temporal weight. Critical user preferences endure indefinitely, while obsolete logs and episodes organically fade away.</p>
-            </FadeIn>
-            <FadeIn delay={0.4}>
-              <h3 className="text-lg md:text-xl font-medium text-white mb-2">Knowledge consolidation</h3>
-              <p className="text-gray-500 text-sm md:text-base leading-relaxed">Stop generating duplicated messes. Conch automatically reinforces frequently accessed memories while avoiding endless duplication.</p>
-            </FadeIn>
-          </div>
+        <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+          <FadeIn delay={0.1}>
+            <div className="bg-[#0d0d0d] border border-[#1f1f1f] rounded-xl p-5 h-full">
+              <div className="text-white font-semibold mb-2">[fact]</div>
+              <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-3">Stable truths your agent should rely on.</p>
+              <div className="text-gray-500 text-sm font-mono">&quot;Jared works at Microsoft.&quot;</div>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div className="bg-[#0d0d0d] border border-[#1f1f1f] rounded-xl p-5 h-full">
+              <div className="text-white font-semibold mb-2">[episode]</div>
+              <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-3">What happened, with context and timeline.</p>
+              <div className="text-gray-500 text-sm font-mono">&quot;We switched outreach to a 4-lane Lobster workflow.&quot;</div>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <div className="bg-[#0d0d0d] border border-[#1f1f1f] rounded-xl p-5 h-full">
+              <div className="text-white font-semibold mb-2">[action]</div>
+              <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-3">Executed work — what was actually done.</p>
+              <div className="text-gray-500 text-sm font-mono">&quot;Updated Plane #51 and ran isolated A/B eval.&quot;</div>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.4}>
+            <div className="bg-[#0d0d0d] border border-[#1f1f1f] rounded-xl p-5 h-full">
+              <div className="text-white font-semibold mb-2">[intent]</div>
+              <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-3">Planned commitments — what should happen next.</p>
+              <div className="text-gray-500 text-sm font-mono">&quot;Nail next week&apos;s hackathon with one undeniable primitive.&quot;</div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -194,20 +203,23 @@ export default function Home() {
           <div className="md:w-1/2 w-full pt-2">
             <FadeIn>
               <div className="code-block text-sm md:text-base p-5 md:p-6 bg-[#0d0d0d] border-[#1f1f1f]">
-                <div className="text-gray-600 mb-1.5 font-medium"># Stored initially:</div>
-                <div className="mb-6"><span className="text-gray-600">$</span> <span className="text-[var(--accent)]">conch remember</span> <span className="text-emerald-400/80">&quot;Jared&quot;</span> <span className="text-emerald-400/80">&quot;is employed at&quot;</span> <span className="text-emerald-400/80">&quot;Microsoft&quot;</span></div>
-                
-                <div className="text-gray-600 mb-1.5 font-medium"># Intuitively recalled:</div>
-                <div className="mb-3"><span className="text-gray-600">$</span> <span className="text-[var(--accent)]">conch recall</span> <span className="text-emerald-400/80">&quot;where does Jared work?&quot;</span></div>
-                
-                <motion.div 
-                  initial={{ opacity: 0, y: 10 }} 
-                  whileInView={{ opacity: 1, y: 0 }} 
+                <div className="text-gray-600 mb-1.5 font-medium"># Store by primitive:</div>
+                <div className="mb-2"><span className="text-gray-600">$</span> <span className="text-[var(--accent)]">conch remember</span> <span className="text-emerald-400/80">&quot;Jared&quot;</span> <span className="text-emerald-400/80">&quot;is employed at&quot;</span> <span className="text-emerald-400/80">&quot;Microsoft&quot;</span></div>
+                <div className="mb-2"><span className="text-gray-600">$</span> <span className="text-[var(--accent)]">conch remember-action</span> <span className="text-emerald-400/80">&quot;Updated Plane #51 and reran A/B eval&quot;</span></div>
+                <div className="mb-6"><span className="text-gray-600">$</span> <span className="text-[var(--accent)]">conch remember-intent</span> <span className="text-emerald-400/80">&quot;Ship hackathon primitive next week&quot;</span></div>
+
+                <div className="text-gray-600 mb-1.5 font-medium"># Recalled together:</div>
+                <div className="mb-3"><span className="text-gray-600">$</span> <span className="text-[var(--accent)]">conch recall</span> <span className="text-emerald-400/80">&quot;what are we doing at work?&quot;</span></div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.5 }}
                   className="text-gray-300 bg-[#161616] p-3 md:p-4 rounded-lg border border-[#2a2a2a]"
                 >
                   <div className="text-white mb-1">→ [fact] Jared is employed at Microsoft</div>
-                  <div className="text-sm md:text-base font-mono text-gray-500">score: 0.847 | strength: 0.94</div>
+                  <div className="text-white mb-1">→ [action] Updated Plane #51 and reran A/B eval</div>
+                  <div className="text-white">→ [intent] Ship hackathon primitive next week</div>
                 </motion.div>
               </div>
             </FadeIn>
