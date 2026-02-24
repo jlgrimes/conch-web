@@ -40,7 +40,7 @@ export default function Home() {
         </div>
         <div className="flex items-center gap-5 text-sm">
           <a href="/reliability" className="text-gray-400 hover:text-white transition-colors">Reliability</a>
-          <a href="https://app.conch.lol" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors">Portal</a>
+          <a href="https://app.conch.so" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors">Portal</a>
         </div>
       </nav>
 

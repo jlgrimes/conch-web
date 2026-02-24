@@ -62,7 +62,7 @@ export default function ReliabilityPage() {
         <FadeIn delay={0.3}>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="https://app.conch.lol"
+              href="https://app.conch.so"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-white text-black rounded-lg hover:bg-gray-200 transition-colors"
